@@ -11,7 +11,10 @@ while ($respuesta = mysqli_fetch_array($consulta)) {
     $activo = $respuesta['cons_activo'];
 }
 
-//asd
+if(isset($return))
+{
+    header("Location: ?modulo=consultorios");
+}
 if (isset($update)) {
     $code = limpiar($code);
     $name = limpiar($name);
@@ -30,40 +33,32 @@ if (isset($update)) {
 <form method="post" action="" enctype="multipart/form-data">
     <div style="margin-top:25px">
         <form method="post" action="" enctype="multipart/form-data">
-            <div style="width: 400px; background: #24303c;padding: 30px;margin:auto;margin-top: 10px;border-radius: 4px;">
-                <div class="form-group">
-                    <div class="form-group">
-                        <p>Ingrese codigo</p>
-                        <input type="text" value="<?= $codigo ?>" class="form-control" name="code" placeholder="codigo" style="width: 200px" />
-                    </div>
+            <div class="frm-upd-cons">
+                <div class="upd-code-cons">
+                    <p>Ingrese codigo</p>
+                    <input type="text" value="<?= $codigo ?>" class="form-control" name="code" placeholder="codigo" style="width: 200px" />
                 </div>
-                <div class="form-group">
-                    <div class="form-group">
-                        <p>Ingrese nombre</p>
-                        <input type="text" value="<?= $nombre ?>" class="form-control" name="name" placeholder="Nombre" style="width: 200px" />
-                    </div>
+                <div class="upd-name-cons">
+                    <p>Ingrese nombre</p>
+                    <input type="text" value="<?= $nombre ?>" class="form-control" name="name" placeholder="Nombre" style="width: 200px" />
                 </div>
-                <div>
-                    <div class="form-group">
-                        <div class="form-group">
-                            <p>Ingresa locación</p>
-                            <input type="text" value="<?= $ubicacion ?>" class="form-control" name="location" placeholder="locación" style="width: 200px" />
-                        </div>
-                    </div>
+                <div class="upd-loc-cons">
+                    <p>Ingresa locación</p>
+                    <input type="text" value="<?= $ubicacion ?>" class="form-control" name="location" placeholder="locación" style="width: 200px" />
                 </div>
-                <div class="row">
-                    <div class="form-group">
-                        <div class="form-group">
-                            <p>Ingrese el estado</p>
-                            <input type="text" value="<?= $activo ?>" class="form-control" name="state" placeholder="estado" />
-                        </div>
-                    </div>
-
+                <div class="upd-state-cons">
+                    <p>Activo</p>
+                    <select name="state">
+                        <option value="si">Si</option>
+                        <option value="no" selected>No</option>
+                    </select>
                 </div>
-                <div class="row w-100">
-                    <div class="col v-center" style=" margin-bottom: 15px;">
-                        <button type="submit" name="update" class="btn btn-primary"> <i class="fa fa-search"></i>Actualizar</button>
-                    </div>
+                <div class="btn-upd-cons" style=" margin-bottom: 15px;">
+                    <button type="submit" name="update" class="btn btn-primary"> <i class="fa fa-search"></i>Actualizar</button>
                 </div>
+                <div class="btn-return" style=" margin-bottom: 15px;">
+                    <button type="submit" name="return" class="btn btn-primary"> <i class="fa fa-search"></i>Volver</button> </div>
             </div>
         </form>
+    </div>
+</form>

@@ -2,7 +2,10 @@
 $dato = "SELECT * FROM pacientes ORDER BY pac_cedula ASC";
 $dato1 = " ";
 $alert = "";
-
+if(isset($return_pac))
+{
+    header("Location: ?modulo=pacientes");
+}
 if (isset($added)) {
     $cedula = limpiar($cedula);
     $name = limpiar($name);
@@ -50,7 +53,7 @@ if (isset($buscar)) {
                     <button type="submit" name="buscar" class="btn btn-primary"> <i class="fa fa-search"></i>Buscar</button>
                 </div>
                 <div class="btn-add-pac">
-                    <button type="submit" name="adicionar" class="btn btn-primary" style="margin-top:75px;margin-left:50px"> <i class="fa fa-search"></i>Agregar</button>
+                    <button type="submit" name="adicionar" class="btn btn-primary" > <i class="fa fa-search"></i>Agregar</button>
                 </div>
             </div>
         </form>
@@ -60,20 +63,20 @@ if (isset($buscar)) {
     ?>
 
         <form method="post" action="" enctype="multipart/form-data">
-            <div style="margin-top:25px">
+            <div >
                 <form method="post" action="" enctype="multipart/form-data">
                     <div class="cont-frm-added">
                         <div class="pac-text-add-cc">
                             <p>Ingrese cedula</p>
-                            <input type="text" class="form-control" name="cedula" placeholder="Cedula" style="width: 200px" />
+                            <input type="text" class="form-control" name="cedula" placeholder="Cedula"  />
                         </div>
                         <div class="pac-text-add-name">
                             <p>Ingrese nombre</p>
-                            <input type="text" class="form-control" name="name" placeholder="Nombre" style="width: 200px" />
+                            <input type="text" class="form-control" name="name" placeholder="Nombre"  />
                         </div>
                         <div class="pac-text-add-lname">
                             <p>Ingresa apelldo</p>
-                            <input type="text" class="form-control" name="lname" placeholder="Apellido" style="width: 200px" />
+                            <input type="text" class="form-control" name="lname" placeholder="Apellido"  />
                         </div>
                         <div class="pac-text-add-mail">
                             <p>Ingrese el correo</p>
@@ -87,13 +90,14 @@ if (isset($buscar)) {
             </div>
 
 
-
-            <div class="row w-100">
-                <div class="btn-added-pac" style=" margin-bottom: 15px;">
+                <div class="btn-added-pac">
                     <button type="submit" name="added" class="btn btn-primary"> <i class="fa fa-search"></i>Añadir</button>
                 </div>
+                <div class="btn-return">
+                            <button type="submit" name="return_pac" class="btn btn-primary"> <i class="fa fa-search"></i><- Volver</button>
+                        </div>
             </div>
-</div>
+         </div>
 </form>
 <?php
     }

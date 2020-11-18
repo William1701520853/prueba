@@ -2,9 +2,17 @@
 
 $nombre = "SELECT concat_ws(' ', pacientes.pac_nombre, pacientes.pac_apellido) as nombre from pacientes where pac_cedula ='$buscar'";
 $dato = "SELECT cit_codigo,cit_fecha, cit_hora, cons_codigo FROM citas where pac_cedula ='$buscar'";
-
+if (isset($return_pac)) {
+    header("Location: ?modulo=pacientes");
+}
 ?>
-<div style="margin-top:25px">
+<div>
+
+    <div class="btn-return">
+    <a href="?modulo=pacientes"><button type="submit" name="return_pac" class="btn btn-primary"> <i class="fa fa-search"></i><- Volver</button></a>
+    </div>
+</div>
+<div class="frm-delete-pac">
     <table class="table table-bordered table-dark">
         <?php
         $mysqli = $mysqlC;
@@ -31,7 +39,7 @@ $dato = "SELECT cit_codigo,cit_fecha, cit_hora, cons_codigo FROM citas where pac
 
         $consulta = mysqli_query($mysqli, $dato);
         while ($respuesta = mysqli_fetch_array($consulta)) {
-            
+
             $code = $respuesta['cit_codigo'];
             $fecha = $respuesta['cit_fecha'];
             $hora = $respuesta['cit_hora'];
@@ -43,7 +51,7 @@ $dato = "SELECT cit_codigo,cit_fecha, cit_hora, cons_codigo FROM citas where pac
                 <td><?= $hora ?></td>
                 <td><?= $consultorio ?></td>
                 <td>
-                <a href="?modulo=frmdelete&borrar=<?= $code ?>"><input type="submit" value="" width="5" name="search" style="background:url(imagenes/remove.png) no-repeat; border:none; width:32px; height:32px;" title="search"></a>
+                    <a href="?modulo=frmdelete&borrar=<?= $code ?>"><input type="submit" value="" width="5" name="search" style="background:url(imagenes/remove.png) no-repeat; border:none; width:32px; height:32px;" title="search"></a>
 
                 </td>
 

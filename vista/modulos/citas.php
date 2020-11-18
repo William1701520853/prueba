@@ -18,51 +18,36 @@ if (isset($buscar)) {
 }
 ?>
 
-<div style="width: 400px; background: #24303c;padding: 30px;margin:auto;margin-top: 10px;border-radius: 4px;">
+<div >
     <form method="post" action="" enctype="multipart/form-data">
-        <div class="row">
-            <div class="form-group">
-                <div class="">
-                    <p>Ingrese la primer fecha</p>
-                    <input type="date" name="date1" value="<?php echo date("Y-m-d"); ?>">
-                </div>
+        <div class="frm-cite">
+            <div class="cit-search-date-1 ">
+                <p>Ingrese la primer fecha</p>
+                <input type="date" name="date1" >
             </div>
-            <div class="form-group">
-                <div class="">
-                    <p>Ingrese la segunda fecha</p>
-                    <input type="date" name="date2" value="<?php echo time("Y-m-d"); ?>">
-                </div>
+            <div class="cit-search-date-2">
+                <p>Ingrese la segunda fecha</p>
+                <input type="date" name="date2" value="<?php echo date("Y-m-d"); ?>">
             </div>
-            <div class="form-group">
-                <div class="col">
-                    <p>Ingresa el consultorio</p>
-                    <input type="text" class="form-control" name="consultorio" placeholder="Consultorio" style="width: 200px" />
-                </div>
+            <div class="cit-search-cons">
+                <p>Ingresa el consultorio</p>
+                <input type="text" class="form-control" name="consultorio" placeholder="Consultorio" style="width: 200px" />
             </div>
-
-
-            <div class="form-group">
-                <div class="col">
-                    <div class="">
-                        <p>Ingrese el nombre</p>
-                        <input type="text" class="form-control" name="nombre" placeholder="Nombre" />
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="">
-                        <p>Ingresa la cedula</p>
-                        <input type="text" class="form-control" name="cedula" placeholder="Cedula" />
-                    </div>
-                </div>
+            <div class="cit-search-name">
+                <p>Ingrese el nombre</p>
+                <input type="text" class="form-control" name="nombre" placeholder="Nombre" />
             </div>
-            <div class="row w-100" style="margin-left:50px ;">
-                <div class="col v-center">
-                    <button type="submit" name="buscar" class="btn btn-primary"> <i class="fa fa-search"></i>Buscar</button>
-                </div>
+            <div class="cit-search-cc">
+                <p>Ingresa la cedula</p>
+                <input type="text" class="form-control" name="cedula" placeholder="Cedula" />
             </div>
-
+            <div class="btn-search-cite">
+                <button type="submit" name="buscar" class="btn btn-primary"> <i class="fa fa-search"></i>Buscar</button>
+            </div>
         </div>
-    </form>
+
+</div>
+</form>
 </div>
 <div>
     <table class="table table-bordered table-dark">
