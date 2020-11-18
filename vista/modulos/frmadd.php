@@ -13,7 +13,6 @@ if (!empty($_POST)) {
         $consu =  $_POST['consu'];
         $q = mysqli_query($mysqli, "SELECT * FROM `citas` WHERE `cit_fecha` = '$date' and `cit_hora` = '$time'");
         $veri =   mysqli_num_rows($q);
-        $veri =   mysqli_num_rows($q);
         if ($veri == 0) {
             if ($date != null && $time != null && $consu != null) {
                 if (!in_array($date, $nuevo_array_date) &&  !in_array($time, $nuevo_array_hour)) {

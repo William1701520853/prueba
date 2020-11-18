@@ -2,6 +2,7 @@
 $dato = "SELECT * FROM pacientes ORDER BY pac_cedula ASC";
 $dato1 = " ";
 $alert = "";
+$mysqli = $mysqlC;
 if (isset($return_pac)) {
     header("Location: ?modulo=pacientes");
 }
@@ -11,14 +12,28 @@ if (isset($added)) {
     $lname = limpiar($lname);
     $mail = limpiar($mail);
     $bdate = limpiar($bdate);
-    if ($cedula != null && $name != null && $lname != null && $mail != null && $bdate != null) {
-        $dato1 = "INSERT INTO pacientes VALUES ('$cedula', '$name', '$lname', '$mail','$bdate')";
-    } else {
+    $q = mysqli_query($mysqli, "SELECT * FROM pacientes WHERE `pac_cedula` = '$cedula'");
+    $veri =   mysqli_num_rows($q);
 
-?> <div class="alert alert-danger" role="alert">
-            El paciente no se pudo agregar por favor intentar de nuevo.
-        </div>
+
+    if ($cedula != null && $name != null && $lname != null && $mail != null && $bdate != null) {
+        if ($veri == 0) {
+            $dato1 = "INSERT INTO pacientes VALUES ('$cedula', '$name', '$lname', '$mail','$bdate')";
+
+        } else {
+
+        ?> <div class="alert alert-danger" role="alert">
+               El documento ingresado ya se encuentra registrado, digite nuevamente.
+            </div>
 <?php
+
+        }
+    }
+    else{
+        ?> <div class="alert alert-danger" role="alert">
+                asdasEl paciente no se pudo agregar por favor intentar de nuevo.
+            </div>
+            <?php
 
     }
 }
