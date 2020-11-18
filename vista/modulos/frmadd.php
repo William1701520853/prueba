@@ -11,21 +11,19 @@ if (!empty($_POST)) {
         $date =  $_POST['date'];
         $time =  $_POST['time'];
         $consu =  $_POST['consu'];
-        $q = mysqli_query($mysqli, "SELECT * FROM `citas` WHERE `cit_fecha` = '$date' and `cit_hora` = '$time'");
+        $q = mysqli_query($mysqli, "SELECT * FROM `citas` WHERE `cit_fecha` = '$date' and `cit_hora` = '$time'and `cons_codigo` = '$consu'");
         $veri =   mysqli_num_rows($q);
         if ($veri == 0) {
             if ($date != null && $time != null && $consu != null) {
-                if (!in_array($date, $nuevo_array_date) &&  !in_array($time, $nuevo_array_hour)) {
-                    $insert = "INSERT INTO `citas` (`cit_codigo`, `cit_fecha`, `cit_hora`, `cons_codigo`, `pac_cedula`) VALUES (NULL, '$date', '$time', '$consu', '$adicionar');";
+                $insert = "INSERT INTO `citas` (`cit_codigo`, `cit_fecha`, `cit_hora`, `cons_codigo`, `pac_cedula`) VALUES (NULL, '$date', '$time', '$consu', '$adicionar');";
 
-                    $insertar1 = mysqli_query($mysqli, $insert);
+                $insertar1 = mysqli_query($mysqli, $insert);
 
-                    if ($insertar1) {
-                        header("Location: ?modulo=pacientes");
-                    }
+                if ($insertar1) {
+                    header("Location: ?modulo=pacientes");
                 } else {
 ?> <div class="alert alert-danger" role="alert">
-                        Seleccione otra hora o fecha por favor.
+                        Seleccione otra hora, fecha o consultorio por favor.
                     </div>
                 <?php
                 }
@@ -33,13 +31,13 @@ if (!empty($_POST)) {
                 ?> <div class="alert alert-danger" role="alert">
                     La cita no se pudo agregar correctamente, verifique los campos.
                 </div>
-<?php
+            <?php
 
             }
-        }else{
+        } else {
             ?> <div class="alert alert-danger" role="alert">
-                    La hora seleccionada está ocupada, seleccione otra hora o fecha.
-                </div>
+                La hora seleccionada está ocupada, seleccione otra hora o fecha.
+            </div>
 <?php
         }
     }

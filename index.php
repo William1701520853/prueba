@@ -60,43 +60,6 @@ if (!isset($modulo)) {
 
 </div>
 
-
-
-
-
-
-
-
-    <!-- <div class="p-3 mb-2 bg-primary text-white" style="width:100%; height:25%;margin:0px;">
-
-    <hr color="white" width=70%>
-
-  <label class="botones" style="margin-left:400px">
-      <label class="botonInicio"><a href="" style='text-decoration:none;'>
-          <font size=5 color="black">Inicio
-        </a></font></label>
-      <label class="p" style="margin-left:25px">
-        <font color=white size=5>|
-      </label></font>
-      <label class="botonInicio" style="margin-left:25px"><a href="?modulo=citas" style='text-decoration:none'>
-          <font size=5 color="black">Citas
-        </a></font></label>
-      <label class="p" style="margin-left:25px">
-        <font color=white size=5>|</font>
-      </label>
-      <label class="botonInicio" style="margin-left:25px"><a href="?modulo=pacientes" style='text-decoration:none; '>
-          <font size=5 color="black">Pacientes
-        </a></font></label>
-      <label class="p" style="margin-left:25px">
-        <font color=white size=5>|
-      </label></font>
-      <label class="botonInicio" style="margin-left:25px"><a href="?modulo=consultorios" style='text-decoration:none'>
-          <font size=5 color="black">Consultorios
-        </a></font></label>
-    </label>
-    <hr color="white" width="80%" />
-
-  </div> -->
   <br />
   <div >
     <?php

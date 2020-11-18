@@ -7,41 +7,39 @@ if (isset($return_pac)) {
     header("Location: ?modulo=pacientes");
 }
 if (isset($added)) {
-    $cedula = limpiar($cedula);
+    $identification = limpiar($identification);
     $name = limpiar($name);
     $lname = limpiar($lname);
     $mail = limpiar($mail);
     $bdate = limpiar($bdate);
-    $q = mysqli_query($mysqli, "SELECT * FROM pacientes WHERE `pac_cedula` = '$cedula'");
+    $q = mysqli_query($mysqli, "SELECT * FROM pacientes WHERE `pac_cedula` = '$identification'");
     $veri =   mysqli_num_rows($q);
 
 
-    if ($cedula != null && $name != null && $lname != null && $mail != null && $bdate != null) {
+    if ($identification != null && $name != null && $lname != null && $mail != null && $bdate != null) {
         if ($veri == 0) {
-            $dato1 = "INSERT INTO pacientes VALUES ('$cedula', '$name', '$lname', '$mail','$bdate')";
-
+            $dato1 = "INSERT INTO pacientes VALUES ('$identification', '$name', '$lname', '$mail','$bdate')";
         } else {
 
-        ?> <div class="alert alert-danger" role="alert">
-               El documento ingresado ya se encuentra registrado, digite nuevamente.
+?> <div class="alert alert-danger" role="alert">
+                El documento ingresado ya se encuentra registrado, intentelo nuevamente.
             </div>
-<?php
+        <?php
 
         }
-    }
-    else{
+    } else {
         ?> <div class="alert alert-danger" role="alert">
-                asdasEl paciente no se pudo agregar por favor intentar de nuevo.
-            </div>
-            <?php
+            El paciente no se pudo agregar por favor intentar de nuevo.
+        </div>
+<?php
 
     }
 }
 if (isset($buscar)) {
-    $cedula =  limpiar($cedula);
+    $identification =  limpiar($identification);
     $name =  limpiar($name);
-    if ($cedula != null) {
-        $dato =  "SELECT * FROM pacientes WHERE upper(pac_cedula ) like upper('%$cedula%')";
+    if ($identification != null) {
+        $dato =  "SELECT * FROM pacientes WHERE upper(pac_cedula ) like upper('%$identification%')";
     } elseif ($name != null) {
         $dato =  "SELECT * FROM pacientes WHERE trim(upper(concat_ws(' ', pac_nombre, pac_apellido))) like trim(upper('%$name%'))";
     }
@@ -56,7 +54,7 @@ if (isset($buscar)) {
                 <div class="pac-text-cc">
 
                     <p>Ingrese cedula</p>
-                    <input type="text" name="cedula" placeholder="Ingresa el numero de cedula" />
+                    <input type="text" name="identification" placeholder="Ingresa el numero de cedula" />
 
                 </div>
                 <div class="pac-text-name">
@@ -82,7 +80,7 @@ if (isset($buscar)) {
                     <div class="cont-frm-added">
                         <div class="pac-text-add-cc">
                             <p>Ingrese cedula</p>
-                            <input type="text" class="form-control" name="cedula" placeholder="Cedula" />
+                            <input type="text" class="form-control" name="identification" placeholder="Cedula" />
                         </div>
                         <div class="pac-text-add-name">
                             <p>Ingrese nombre</p>
@@ -145,21 +143,21 @@ if (isset($buscar)) {
         $consulta = mysqli_query($mysqli, $dato);
 
         while ($respuesta = mysqli_fetch_array($consulta)) {
-            $cedula = $respuesta['pac_cedula'];
+            $identification = $respuesta['pac_cedula'];
             $nombre = $respuesta['pac_nombre'];
             $apellido = $respuesta['pac_apellido'];
             $correo = $respuesta['pac_correo'];
             $fnac = $respuesta['pac_fnacimiento'];
         ?>
             <tr>
-                <td><?= $cedula ?></td>
+                <td><?= $identification ?></td>
                 <td><?= $nombre ?></td>
                 <td><?= $apellido ?></td>
                 <td><?= $correo ?></td>
                 <td><?= $fnac ?></td>
                 <td>
-                    <a href="?modulo=frmAdd&adicionar=<?= $cedula ?>"><input type="submit" value="" width="5" name="add" class="btn-add" title="Agregar cita"></a>
-                    <a href="?modulo=frmSearch&buscar=<?= $cedula ?>"><input type="submit" value="" width="5" name="search" class="btn-search" title="Buscar citas"></a>
+                    <a href="?modulo=frmAdd&adicionar=<?= $identification ?>"><input type="submit" value="" width="5" name="add" class="btn-add" title="Agregar cita"></a>
+                    <a href="?modulo=frmSearch&buscar=<?= $identification ?>"><input type="submit" value="" width="5" name="search" class="btn-search" title="Buscar citas"></a>
                 </td>
 
 
