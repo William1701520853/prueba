@@ -1,0 +1,17 @@
+.forms {
+    width: 400px;
+    background: #24303c;
+    padding: 30px;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+.form-group {
+    color: white;
+}
+
+.form-groups {
+    color: black;
+    margin-left: 20px;
+}
