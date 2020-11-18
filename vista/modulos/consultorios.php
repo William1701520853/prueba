@@ -85,9 +85,11 @@ if (isset($buscar)) {
     }
         ?> <form class="frm-cons-table">
     <table class="table table-bordered table-dark">
+        <div class="frm-consultorios">
         <tr>
             <th colspan=5>Consultorios</th>
         </tr>
+        </div>
         <tr>
             <th scope="col">Codigo consultorio</th>
             <th scope="col">NomNombre consultoriobre</th>

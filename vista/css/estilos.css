@@ -400,18 +400,6 @@ html {
     margin-bottom: 20px;
 }
 
-nav {
-    background-color: #0F9BF9 !important;
-    font-size: 20px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-.navbar-nav {
-    padding-left: 450px;
-    color: black !important;
-    font-weight: bold;
-}
-
 .frm-cons-table {
     margin-top: -30px;
 }
@@ -461,4 +449,20 @@ nav {
     border: none;
     width: 32px;
     height: 32px;
+}
+
+nav {
+    background-color: #0F9BF9 !important;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.navbar-nav {
+    padding-left: 450px;
+    color: black !important;
+    font-weight: bold;
+}
+
+.frm-consultorios {
+    margin-top: 30px;
 }
