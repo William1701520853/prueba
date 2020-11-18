@@ -15,4 +15,3 @@ echo $code;
     
     header("Location: ?modulo=consultorios");
 }
-?>

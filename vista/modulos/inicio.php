@@ -1,6 +1,4 @@
-<br /> <br /> <br /> 
-<div class="">
+<div class="logo">
 
-<center> <img src="imagenes/logo_colombia_taxis.png" width="400" heigth="400">
-  <center />
+  <img src="imagenes/inicio.png" width="400" heigth="400">
 </div>

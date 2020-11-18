@@ -411,3 +411,54 @@ nav {
     color: black !important;
     font-weight: bold;
 }
+
+.frm-cons-table {
+    margin-top: -30px;
+}
+
+.logo {
+    text-align: center;
+}
+
+.btn-add {
+    background-image: url("../../imagenes/add.png");
+    background-color: transparent;
+    border: none;
+    width: 24px;
+    height: 24px;
+}
+
+.btn-search {
+    margin-left: 20px;
+    background-image: url("../../imagenes/lupa.png");
+    background-color: transparent;
+    border: none;
+    width: 24px;
+    height: 24px;
+}
+
+.text-camp {
+    width: 200px;
+    height: auto;
+}
+
+.select-opt {
+    width: 100px;
+}
+
+.btn-del {
+    background-image: url("../../imagenes/remove.png");
+    background-color: transparent;
+    border: none;
+    width: 32px;
+    height: 32px;
+}
+
+.btn-upd {
+    background-image: url("../../imagenes/pencil.png");
+    background-color: transparent;
+    margin-left: 20px;
+    border: none;
+    width: 32px;
+    height: 32px;
+}

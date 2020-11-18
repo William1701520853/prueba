@@ -2,8 +2,7 @@
 $dato = "SELECT * FROM pacientes ORDER BY pac_cedula ASC";
 $dato1 = " ";
 $alert = "";
-if(isset($return_pac))
-{
+if (isset($return_pac)) {
     header("Location: ?modulo=pacientes");
 }
 if (isset($added)) {
@@ -53,7 +52,7 @@ if (isset($buscar)) {
                     <button type="submit" name="buscar" class="btn btn-primary"> <i class="fa fa-search"></i>Buscar</button>
                 </div>
                 <div class="btn-add-pac">
-                    <button type="submit" name="adicionar" class="btn btn-primary" > <i class="fa fa-search"></i>Agregar</button>
+                    <button type="submit" name="adicionar" class="btn btn-primary"> <i class="fa fa-search"></i>Agregar</button>
                 </div>
             </div>
         </form>
@@ -63,20 +62,20 @@ if (isset($buscar)) {
     ?>
 
         <form method="post" action="" enctype="multipart/form-data">
-            <div >
+            <div>
                 <form method="post" action="" enctype="multipart/form-data">
                     <div class="cont-frm-added">
                         <div class="pac-text-add-cc">
                             <p>Ingrese cedula</p>
-                            <input type="text" class="form-control" name="cedula" placeholder="Cedula"  />
+                            <input type="text" class="form-control" name="cedula" placeholder="Cedula" />
                         </div>
                         <div class="pac-text-add-name">
                             <p>Ingrese nombre</p>
-                            <input type="text" class="form-control" name="name" placeholder="Nombre"  />
+                            <input type="text" class="form-control" name="name" placeholder="Nombre" />
                         </div>
                         <div class="pac-text-add-lname">
                             <p>Ingresa apelldo</p>
-                            <input type="text" class="form-control" name="lname" placeholder="Apellido"  />
+                            <input type="text" class="form-control" name="lname" placeholder="Apellido" />
                         </div>
                         <div class="pac-text-add-mail">
                             <p>Ingrese el correo</p>
@@ -84,20 +83,20 @@ if (isset($buscar)) {
                         </div>
                         <div class="pac-text-add-date">
                             <p>Ingresa la fecha de nacimiento</p>
-                            <input type="date" name="bdate" max="<?php echo date("Y-m-d"); ?>" >
+                            <input type="date" name="bdate" max="<?php echo date("Y-m-d"); ?>">
                         </div>
                     </div>
             </div>
 
 
-                <div class="btn-added-pac">
-                    <button type="submit" name="added" class="btn btn-primary"> <i class="fa fa-search"></i>Añadir</button>
-                </div>
-                <div class="btn-return">
-                            <button type="submit" name="return_pac" class="btn btn-primary"> <i class="fa fa-search"></i><- Volver</button>
-                        </div>
+            <div class="btn-added-pac">
+                <button type="submit" name="added" class="btn btn-primary"> <i class="fa fa-search"></i>Añadir</button>
             </div>
-         </div>
+            <div class="btn-return">
+                <button type="submit" name="return_pac" class="btn btn-primary"> <i class="fa fa-search"></i>Volver</button>
+            </div>
+</div>
+</div>
 </form>
 <?php
     }
@@ -144,9 +143,8 @@ if (isset($buscar)) {
                 <td><?= $correo ?></td>
                 <td><?= $fnac ?></td>
                 <td>
-                    <a href="?modulo=frmadd&adicionar=<?= $cedula ?>"><input type="submit" value="" width="5" name="add" style="background:url(imagenes/add.png) no-repeat; border:none; width:24px; height:24px;" title="add"></a>
-
-                    <a href="?modulo=frmsearch&buscar=<?= $cedula ?>"><input type="submit" value="" width="5" name="search" style="background:url(imagenes/lupa.png) no-repeat; border:none; width:24px; height:24px;" title="search"></a>
+                    <a href="?modulo=frmAdd&adicionar=<?= $cedula ?>"><input type="submit" value="" width="5" name="add" class="btn-add" title="Agregar cita"></a>
+                    <a href="?modulo=frmSearch&buscar=<?= $cedula ?>"><input type="submit" value="" width="5" name="search" class="btn-search" title="Buscar citas"></a>
                 </td>
 
 

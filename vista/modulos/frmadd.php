@@ -50,11 +50,11 @@ if (!empty($_POST)) {
     <div class="frm-cit-pac">
         <div class="add-cit-date-pac">
             <label for="pac_ced" class="control-label">Ingrese la fecha</label>
-            <input type="date" name="date" value="<?php echo date("Y-m-d"); ?>">
+            <input type="date" name="date" min="<?php echo date("Y-m-d"); ?>" value="<?php echo date("Y-m-d"); ?>">
         </div>
         <div class="add-cit-hour-pac">
             <label for="nombre" class="control-label">Ingrese la hora</label>
-            <input type="time" name="time" value="<?php echo time('H:m'); ?>">
+            <input type="time" name="time" min="06:00" value="<?php echo time('H:m'); ?>">
         </div>
         <div class=" add-cit-cons-pac">
             <label for="consul" class="control-label">Consultorio</label>
@@ -77,11 +77,11 @@ if (!empty($_POST)) {
             </select>
         </div>
         <div class="btn-cit-add">
-        <a href="?modulo=pacientes"><button type="submit" name="insertar" class="btn btn-primary"> <i class="fa fa-search"></i>Adicionar</button></a>
+            <a href="?modulo=pacientes"><button type="submit" name="insertar" class="btn btn-primary"> <i class="fa fa-search"></i>Adicionar</button></a>
         </div>
 
         <div class="btn-return">
-            <button type="submit" name="return" class="btn btn-primary"><- Volver</button> 
-        </div> 
-    </div> 
+            <button type="submit" name="return" class="btn btn-primary">Volver</button>
+        </div>
+    </div>
 </form>

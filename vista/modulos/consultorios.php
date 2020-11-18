@@ -1,8 +1,8 @@
 <?php
 $dato = "SELECT * FROM consultorios ORDER BY cons_codigo ASC";
 $dato1 = " ";
-if(isset($return_pac))
-{
+
+if (isset($return_pac)) {
     header("Location: ?modulo=consultorios");
 }
 if (isset($added)) {
@@ -30,7 +30,7 @@ if (isset($buscar)) {
     }
 }
 ?>
-<div style="margin-top:25px">
+<div >
     <?php
     if (!isset($adicionar)) {
     ?>
@@ -47,38 +47,35 @@ if (isset($buscar)) {
 
         <form method="post" action="" enctype="multipart/form-data">
             <div class="frm-cons">
-                
+
                 <form method="post" action="" enctype="multipart/form-data">
                     <div class="frm-dates-cons">
                         <div class="add-cod-cons">
                             <p>Ingrese codigo</p>
-                            <input type="text" class="form-control" name="code" placeholder="codigo" style="width: 200px" />
+                            <input type="text" class="form-control" name="code" placeholder="codigo" class="text-camp" />
                         </div>
                         <div class="add-nam-cons">
                             <p>Ingrese nombre</p>
-                            <input type="text" class="form-control" name="name" placeholder="Nombre" style="width: 200px" />
+                            <input type="text" class="form-control" name="name" placeholder="Nombre" class="text-camp" />
                         </div>
                         <div>
                             <div class="add-loc_cons">
                                 <p>Ingresa locación</p>
-                                <input type="text" class="form-control" name="location" placeholder="locación" style="width: 200px" />
+                                <input type="text" class="form-control" name="location" placeholder="locación" class="text-camp" />
                             </div>
                         </div>
                         <div class="select-state">
                             <p>Activo</p>
-                            <select name="state">
-                                <option value="si">Si</option>
-                                <option value="no" selected>No</option>
+                            <select name="state" class="select-opt">
+                                <option value="Si">Si</option>
+                                <option value="No" selected>No</option>
                             </select>
                         </div>
-
-
-
                         <div class="btn-cons-add">
-                            <button type="submit" name="added" class="btn btn-primary"> <i class="fa fa-search"></i>Añadir</button>
+                            <button type="submit" name="added" class="btn btn-success"> <i class="fa fa-search"></i>Añadir</button>
                         </div>
                         <div class="btn-return">
-                            <button type="submit" name="return_pac" class="btn btn-primary"> <i class="fa fa-search"></i><- Volver</button>
+                            <button type="submit" name="return_pac" class="btn btn-primary"> <i class="fa fa-search"></i>Volver</button>
                         </div>
                     </div>
             </div>
@@ -86,7 +83,7 @@ if (isset($buscar)) {
 </div>
 </form> <?php
     }
-        ?> <form>
+        ?> <form class="frm-cons-table">
     <table class="table table-bordered table-dark">
         <tr>
             <th colspan=5>Consultorios</th>
@@ -120,13 +117,9 @@ if (isset($buscar)) {
                 <td><?= $ubicacion ?></td>
                 <td><?= $activo ?></td>
                 <td>
-                    <label class="lbldelcon" style="margin-left:25px"><a href="?modulo=frmdelcons&del=<?= $codigo ?>" style='text-decoration:none'>
-                            <font size=3 color="red">Borrar
-                        </a></font></label>
-                    <label class="lblupdcon" style="margin-left:25px"><a href="?modulo=frmupdcons&upd=<?= $codigo ?>" style='text-decoration:none'>
-                            <font size=3 color="blue">Editar
-                        </a></font></label> </td>
+                <a href="?modulo=frmDelCons&del=<?= $codigo ?>"><input type="button" value="" width="5" name="add" class="btn-del" title="Eliminar consultorio"></a>
 
+                <a href="?modulo=frmUpdCons&upd=<?= $codigo ?>"><input type="button" value="" width="5" name="add" class="btn-upd" title="Editar datos de consultorio"></a>
 
             </tr>
         <?php

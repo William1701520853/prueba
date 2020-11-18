@@ -18,12 +18,12 @@ if (isset($buscar)) {
 }
 ?>
 
-<div >
+<div>
     <form method="post" action="" enctype="multipart/form-data">
         <div class="frm-cite">
             <div class="cit-search-date-1 ">
                 <p>Ingrese la primer fecha</p>
-                <input type="date" name="date1" >
+                <input type="date" name="date1">
             </div>
             <div class="cit-search-date-2">
                 <p>Ingrese la segunda fecha</p>

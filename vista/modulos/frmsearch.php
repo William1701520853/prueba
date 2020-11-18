@@ -9,7 +9,7 @@ if (isset($return_pac)) {
 <div>
 
     <div class="btn-return">
-    <a href="?modulo=pacientes"><button type="submit" name="return_pac" class="btn btn-primary"> <i class="fa fa-search"></i><- Volver</button></a>
+        <a href="?modulo=pacientes"><button type="submit" name="return_pac" class="btn btn-primary"> <i class="fa fa-search"></i>Volver</button></a>
     </div>
 </div>
 <div class="frm-delete-pac">
@@ -20,7 +20,6 @@ if (isset($return_pac)) {
         while ($respuesta = mysqli_fetch_array($consulta)) {
             $name = $respuesta['nombre'];
         ?>
-            <a href="?modulo=frmsearch&buscar=<?= $cedula ?>"><input type="submit" value="" width="5" name="search" style="background:url(left-arrow/lupa.png) no-repeat; border:none; width:32px; height:24px;" title="search"></a>
 
             <tr>
                 <th colspan="4">Cita del paciente <?= $name ?> </th>
@@ -51,7 +50,7 @@ if (isset($return_pac)) {
                 <td><?= $hora ?></td>
                 <td><?= $consultorio ?></td>
                 <td>
-                    <a href="?modulo=frmdelete&borrar=<?= $code ?>"><input type="submit" value="" width="5" name="search" style="background:url(imagenes/remove.png) no-repeat; border:none; width:32px; height:32px;" title="search"></a>
+                    <a href="?modulo=frmDelete&borrar=<?= $code ?>"><input type="submit" value="" width="5" name="search" class="btn-del" title="Borrar cita"></a>
 
                 </td>
 
