@@ -15,7 +15,7 @@ $dato = "SELECT cit_codigo,cit_fecha, cit_hora, cons_codigo FROM citas where pac
             <a href="?modulo=frmsearch&buscar=<?= $cedula ?>"><input type="submit" value="" width="5" name="search" style="background:url(left-arrow/lupa.png) no-repeat; border:none; width:32px; height:24px;" title="search"></a>
 
             <tr>
-                <th colspan="6">Cita del paciente <?= $name ?> </th>
+                <th colspan="4">Cita del paciente <?= $name ?> </th>
             </tr>
         <?php
         }

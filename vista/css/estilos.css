@@ -1,3 +1,153 @@
+body,
+html {
+    height: 100%;
+}
+
+.btn-buscar-pac {
+    margin-left: 900px;
+    margin-top: -30px;
+}
+
+
+/* The hero image */
+
+.hero-image {
+    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../imagenes/pruebas.jpg");
+    /* Set a specific height */
+    height: 50%;
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+
+/* Place text in the middle of the image */
+
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    margin-bottom: 20px;
+}
+
+.btn-search-pac {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    margin-top: -80px;
+    margin-left: 250px;
+    margin-bottom: 20px;
+}
+
+.btn-add-pac {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    margin-top: -20px;
+    margin-left: -500px;
+}
+
+.pac-text-cc {
+    margin-left: -300px;
+    margin-top: -100px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.pac-text-name {
+    margin-left: 0px;
+    margin-top: -100px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.pac-text-add-cc {
+    margin-left: -100px;
+    margin-top: -180px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.pac-text-add-name {
+    margin-left: -100px;
+    margin-top: -90px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.pac-text-add-lname {
+    margin-left: -100px;
+    margin-top: 0px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.pac-text-add-mail {
+    margin-left: 200px;
+    margin-top: -180px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.pac-text-add-date {
+    margin-left: 200px;
+    margin-top: -90px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.btn-added-pac {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    margin-top: 20px;
+    margin-left: 200px;
+    margin-bottom: 20px;
+}
+
 .forms {
     width: 400px;
     background: #24303c;
@@ -14,4 +164,16 @@
 .form-groups {
     color: black;
     margin-left: 20px;
+}
+
+nav {
+    background-color: #0F9BF9 !important;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.navbar-nav {
+    padding-left: 450px;
+    color: black !important;
+    font-weight: bold;
 }
