@@ -52,7 +52,7 @@ if (isset($buscar)) {
                     <button type="submit" name="buscar" class="btn btn-primary"> <i class="fa fa-search"></i>Buscar</button>
                 </div>
                 <div class="btn-add-pac">
-                    <button type="submit" name="adicionar" class="btn btn-primary"> <i class="fa fa-search"></i>Agregar</button>
+                    <button type="submit" name="adicionar" class="btn btn-success"> <i class="fa fa-search"></i>Agregar</button>
                 </div>
             </div>
         </form>
@@ -90,7 +90,7 @@ if (isset($buscar)) {
 
 
             <div class="btn-added-pac">
-                <button type="submit" name="added" class="btn btn-primary"> <i class="fa fa-search"></i>Añadir</button>
+                <button type="submit" name="added" class="btn btn-success"> <i class="fa fa-search"></i>Añadir</button>
             </div>
             <div class="btn-return">
                 <button type="submit" name="return_pac" class="btn btn-primary"> <i class="fa fa-search"></i>Volver</button>

@@ -36,7 +36,7 @@ if (isset($buscar)) {
     ?>
         <form method="post" action="" enctype="multipart/form-data">
             <div class="add-cons">
-                <button type="submit" name="adicionar" class="btn btn-primary"> <i class="fa fa-search"></i>Agregar</button>
+                <button type="submit" name="adicionar" class="btn btn-success"> <i class="fa fa-search"></i>Agregar</button>
 
             </div>
         </form>

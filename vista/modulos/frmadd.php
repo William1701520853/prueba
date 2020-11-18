@@ -1,17 +1,7 @@
 <?php
 $mysqli = $mysqlC;
 $dato = "SELECT cons_codigo FROM consultorios order by cons_codigo asc";
-$searchDate = "SELECT cit_fecha FROM citas order by cit_fecha asc";
-$searchHour = "SELECT cit_hora FROM citas order by cit_hora asc";
 
-$sql_resultado = mysqli_query($mysqli, $searchDate);
-while ($fila = mysqli_fetch_assoc($sql_resultado)) {
-    $nuevo_array_date[] = $fila;
-}
-$sql_resultado = mysqli_query($mysqli, $searchHour);
-while ($fila = mysqli_fetch_assoc($sql_resultado)) {
-    $nuevo_array_hour[] = $fila;
-}
 if (isset($return)) {
     header("Location: ?modulo=pacientes");
 }
@@ -21,27 +11,37 @@ if (!empty($_POST)) {
         $date =  $_POST['date'];
         $time =  $_POST['time'];
         $consu =  $_POST['consu'];
-        if ($date != null && $time != null && $consu != null) {
-            if (!in_array($date, $nuevo_array_date) &&  !in_array($time, $nuevo_array_hour)) {
-                $insert = "INSERT INTO `citas` (`cit_codigo`, `cit_fecha`, `cit_hora`, `cons_codigo`, `pac_cedula`) VALUES (NULL, '$date', '$time', '$consu', '$adicionar');";
+        $q = mysqli_query($mysqli, "SELECT * FROM `citas` WHERE `cit_fecha` = '$date' and `cit_hora` = '$time'");
+        $veri =   mysqli_num_rows($q);
+        $veri =   mysqli_num_rows($q);
+        if ($veri == 0) {
+            if ($date != null && $time != null && $consu != null) {
+                if (!in_array($date, $nuevo_array_date) &&  !in_array($time, $nuevo_array_hour)) {
+                    $insert = "INSERT INTO `citas` (`cit_codigo`, `cit_fecha`, `cit_hora`, `cons_codigo`, `pac_cedula`) VALUES (NULL, '$date', '$time', '$consu', '$adicionar');";
 
-                $insertar1 = mysqli_query($mysqli, $insert);
+                    $insertar1 = mysqli_query($mysqli, $insert);
 
-                if ($insertar1) {
-                    header("Location: ?modulo=pacientes");
+                    if ($insertar1) {
+                        header("Location: ?modulo=pacientes");
+                    }
+                } else {
+?> <div class="alert alert-danger" role="alert">
+                        Seleccione otra hora o fecha por favor.
+                    </div>
+                <?php
                 }
             } else {
-?> <div class="alert alert-danger" role="alert">
-                    Seleccione otra hora o fecha por favor.
+                ?> <div class="alert alert-danger" role="alert">
+                    La cita no se pudo agregar correctamente, verifique los campos.
                 </div>
-            <?php
-            }
-        } else {
-            ?> <div class="alert alert-danger" role="alert">
-                La cita no se pudo agregar correctamente, verifique los campos.
-            </div>
 <?php
 
+            }
+        }else{
+            ?> <div class="alert alert-danger" role="alert">
+                    La hora seleccionada está ocupada, seleccione otra hora o fecha.
+                </div>
+<?php
         }
     }
 }
@@ -54,7 +54,7 @@ if (!empty($_POST)) {
         </div>
         <div class="add-cit-hour-pac">
             <label for="nombre" class="control-label">Ingrese la hora</label>
-            <input type="time" name="time" min="06:00" value="<?php echo time('H:m'); ?>">
+            <input type="time" name="time" min="08:00" max="18:00" value="<?php echo time('H:m'); ?>">
         </div>
         <div class=" add-cit-cons-pac">
             <label for="consul" class="control-label">Consultorio</label>
@@ -77,7 +77,7 @@ if (!empty($_POST)) {
             </select>
         </div>
         <div class="btn-cit-add">
-            <a href="?modulo=pacientes"><button type="submit" name="insertar" class="btn btn-primary"> <i class="fa fa-search"></i>Adicionar</button></a>
+            <a href="?modulo=pacientes"><button type="submit" name="insertar" class="btn btn-success"> <i class="fa fa-search"></i>Adicionar</button></a>
         </div>
 
         <div class="btn-return">
