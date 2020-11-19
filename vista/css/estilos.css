@@ -45,6 +45,7 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    margin-top: 70px;
 }
 
 
@@ -404,7 +405,7 @@ html {
     margin-top: -30px;
 }
 
-.logo {
+.imagen-inicio {
     text-align: center;
 }
 
@@ -451,18 +452,70 @@ html {
     height: 32px;
 }
 
-nav {
-    background-color: #0F9BF9 !important;
-    font-size: 20px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-.navbar-nav {
-    padding-left: 450px;
-    color: black !important;
-    font-weight: bold;
-}
-
 .frm-consultorios {
     margin-top: 30px;
+}
+
+.enca {
+    background: rgba(17, 16, 13, 0.5);
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 20px;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    position: fixed;
+}
+
+.wrapper {
+    width: 90%;
+    max-width: 1180px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.logo {
+    color: #fff;
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 70px;
+    float: left;
+}
+
+.nav-b {
+    line-height: 70px;
+    float: right;
+}
+
+.nav-b a {
+    color: #fff;
+    display: inline-block;
+    text-decoration: none !important;
+    font-family: Arial;
+    font-weight: bold;
+    padding: 20px 10px;
+    line-height: normal;
+    font-size: 16px;
+    -webkit-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+
+.nav-b a:hover {
+    color: #33cccc;
+    border-bottom: 5px solid #33cccc;
+}
+
+@media only screen and (min-width:400px) and (max-width:767px) {
+    .enca {
+        height: 70px;
+    }
+    .logo {
+        font-size: 30px;
+        margin-left: 130px;
+        margin-top: -15px;
+    }
+    .nav-b {
+        margin-top: -40px;
+        transform: translateX(-3%)
+    }
 }
